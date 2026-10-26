@@ -86,7 +86,7 @@ const initialRequests = [
   },
 ];
 
-const received = [
+const initialReceived = [
   {
     id: 1,
     subject: "Asunto",
@@ -269,7 +269,9 @@ function App() {
   const [screen, setScreen] = useState("login");
   const [modal, setModal] = useState(false);
   const [requests, setRequests] = useState(initialRequests);
-  const [previousScreen, setPreviousScreen] = useState("");
+  const [previousSection, setPreviousSection] = useState("");
+  const [section, setSection] = useState("received");
+  const [received, setReceived] = useState(initialReceived);
 
   //Received states
 
@@ -278,7 +280,9 @@ function App() {
       {screen === "login" && (
         <LoginView
           onForgot={() => setScreen("recover")}
-          onLogin={() => setScreen("received")}
+          onLogin={() => {
+            (setScreen(""), setSection("received"));
+          }}
         />
       )}
       {screen === "recover" && (
@@ -288,10 +292,12 @@ function App() {
         <div className="app">
           <Sidebar
             onRequest={() => setModal(true)}
-            onReceived={() => setScreen("received")}
-            onRequests={() => setScreen("requestsSent")}
-            onPassword={() => setScreen("password")}
-            onLogout={() => setScreen("login")}
+            onReceived={() => setSection("received")}
+            onRequests={() => setSection("requestsSent")}
+            onPassword={() => setSection("password")}
+            onLogout={() => {
+              (setScreen("login"), setSection(""));
+            }}
           />
 
           <main className="main-panel">
@@ -310,33 +316,34 @@ function App() {
                 {/* <ChevronDown size={16} /> */}
               </div>
             </header>
-            {screen === "received" && (
+            {section === "received" && (
               <Received
                 received={received}
+                setReceived={setReceived}
                 onOpen={() => {
-                  setScreen("detail");
-                  setPreviousScreen("received");
+                  setSection("detail");
+                  setPreviousSection("received");
                 }}
               />
             )}
-            {screen === "requestsSent" && (
+            {section === "requestsSent" && (
               <RequestsSent
                 onOpen={() => {
-                  setScreen("detail");
-                  setPreviousScreen("requestsSent");
+                  setSection("detail");
+                  setPreviousSection("requestsSent");
                 }}
                 requests={requests}
               />
             )}{" "}
-            {screen === "detail" && (
+            {section === "detail" && (
               <RequestDetail
                 onBack={() => {
-                  setScreen(previousScreen);
-                  setPreviousScreen("");
+                  setSection(previousSection);
+                  setPreviousSection("");
                 }}
               />
             )}{" "}
-            {screen === "password" && <PasswordChange />}
+            {section === "password" && <PasswordChange />}
           </main>
 
           <RequestModal open={modal} onClose={() => setModal(false)} />

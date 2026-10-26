@@ -270,6 +270,15 @@ textarea {
 /********************************
 /** REQUESTS RECEIVED
 /********************************/
+.h2-received {
+  color: #5a5959;
+  padding: 18px 0;
+  padding-left: 36px;
+  margin: 0 0 0 0;
+  font-size: 20px;
+  font-weight: 500;
+  background: #fff;
+}
 .emailupb-toolbar {
   display: flex;
   align-items: center;
@@ -291,6 +300,41 @@ textarea {
   color: #858585;
   font-size: 13px;
 }
+.emailupb-filter {
+  font-size: 11px;
+  color: #888692;
+}
+.select-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-width: 178px;
+}
+
+.select-wrap select {
+  appearance: none;
+  border: 1px solid #e5e4eb;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 33px 10px 12px;
+  width: 100%;
+  outline: none;
+  color: #514f5a;
+  font-size: 12px;
+  cursor: pointer;
+}
+.select-wrap > svg {
+  position: absolute;
+  right: 11px;
+  color: #85838e;
+  pointer-events: none;
+}
+.select-wrap select:focus,
+.field:focus {
+  border-color: #8b81c1;
+  box-shadow: 0 0 0 3px #7769bb16;
+}
+
 .emailupb-toolbar input[type="checkbox"],
 .emailupb-table input[type="checkbox"] {
   width: 12px;
@@ -312,7 +356,7 @@ textarea {
 .emailupb-icon-button:hover {
   color: #111;
 }
-.emailupb-toolbar select {
+/* .emailupb-toolbar select {
   width: 38px;
   border: 0;
   appearance: auto;
@@ -321,11 +365,11 @@ textarea {
   background: #fff;
   cursor: pointer;
   font-size: 10px;
-}
-.emailupb-toolbar select:focus {
+} */
+/* .emailupb-toolbar select:focus {
   color: #555;
   width: 100px;
-}
+} */
 .emailupb-delete {
   margin-left: 12px;
 }
@@ -421,6 +465,12 @@ textarea {
   background-color: #ffffff;
   box-sizing: border-box;
 }
+.requests-sent h2 {
+  padding-left: 36px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #5a5959;
+}
 
 /* Tabla principal */
 .requests-table {
@@ -440,6 +490,7 @@ textarea {
   border-bottom: 1px solid #dedede;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  /* margin-left: 36px; */
 }
 
 /* Efecto al pasar el cursor */
@@ -464,7 +515,8 @@ textarea {
 /* Columna del asunto */
 .requests-table .request-subject {
   width: 200px;
-  margin-left: 5.2%;
+  /* margin-left: 5.2%; */
+  text-align: left;
   font-size: 13px;
 }
 
@@ -507,7 +559,7 @@ textarea {
   grid-template-columns: 18px 25px 130px 1fr 60px 20px 20px;
   gap: 5px;
   align-items: center;
-  padding: 0 12px;
+  padding: 0 36px;
   font-size: 8px;
   color: #999;
   cursor: pointer;
@@ -694,6 +746,7 @@ textarea {
   margin: 0;
   font-size: 20px;
   font-weight: 500;
+  color: #5a5959;
 }
 .password-divider {
   height: 1px;

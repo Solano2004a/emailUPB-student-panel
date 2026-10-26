@@ -7,6 +7,7 @@ function RequestsSent({ onOpen, requests }) {
 
   return (
     <div className="requests-sent">
+      <h2>Solicitudes enviadas</h2>
       <table className="requests-table">
         <tbody>
           {requests.map((r) => (

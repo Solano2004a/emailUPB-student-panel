@@ -1,13 +1,11 @@
 import React, { useState, useMemo } from "react";
-import { Icon, RotateCwIcon, Trash2 } from "lucide-react";
+import { Icon, RotateCwIcon, Trash2, ChevronDown } from "lucide-react";
 
-function Received({ received, onOpen }) {
+function Received({ received, setReceived, onOpen }) {
   const [selected, setSelected] = useState([]);
   const [filter, setFilter] = useState("Todas");
   const [notice, setNotice] = useState("");
   const [refreshKey, setRefreshKey] = useState(0);
-  //for now, the delete requests are managed with this state
-  const [requests, setRequests] = useState(received);
 
   // const sectionRequests = useMemo(
   //   () => received.filter((r) => r.section === activeSection),
@@ -52,7 +50,7 @@ function Received({ received, onOpen }) {
 
   const deleteSelected = () => {
     if (!selected.length) return;
-    setRequests((old) => old.filter((r) => !selected.includes(r.id)));
+    setReceived((old) => old.filter((r) => !selected.includes(r.id)));
     setSelected([]);
   };
   const refresh = () => {
@@ -84,6 +82,7 @@ function Received({ received, onOpen }) {
 
   return (
     <>
+      <h2 className="h2-received">Recibidos</h2>
       <div className="emailupb-toolbar">
         <div className="emailupb-toolbar-left">
           <input
@@ -102,16 +101,15 @@ function Received({ received, onOpen }) {
           </button>
         </div>
         <div className="emailupb-toolbar-right">
-          <label htmlFor="emailupb-filter">Filtrar por</label>
-          <select
-            id="emailupb-filter"
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-          >
-            <option>Todas</option>
-            <option>No leídas</option>
-            <option>Leídas</option>
-          </select>
+          <label className="emailupb-filter">Filtrar por</label>
+          <div className="select-wrap">
+            <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+              <option>Todas</option>
+              <option>No leídas</option>
+              <option>Leídas</option>
+            </select>
+            <ChevronDown size={15} />
+          </div>
           <button
             className="emailupb-icon-button emailupb-delete"
             aria-label="Eliminar seleccionadas"
