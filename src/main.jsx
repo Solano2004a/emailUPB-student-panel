@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import { RecoverView, LoginView } from "./login/Login";
 import { RequestsSent } from "./RequestsSent";
+import emailUPBlogo from "./assets/emailUPBlogo.png";
 import {
   Grid2X2,
   KeyRound,
@@ -162,7 +163,11 @@ const received = [
 function Logo() {
   return (
     <div className="brand">
-      <span className="brand-mark">◉</span>emailUPB
+      <img src={emailUPBlogo} alt="UPBlogo" width={34} height={32} />
+      <span>
+        <span className="brand-tiny">email</span>
+        UPB
+      </span>
     </div>
   );
 }
@@ -177,11 +182,13 @@ function Avatar() {
 function Sidebar({ onRequest, onReceived, onRequests, onPassword, onLogout }) {
   return (
     <aside className="sidebar">
-      <Logo />
-      <button className="request-btn" onClick={onRequest}>
-        <PencilLine size={14} />
-        Solicitar
-      </button>
+      <div className="top">
+        <Logo />
+        <button className="request-btn" onClick={onRequest}>
+          <PencilLine size={18} />
+          Solicitar
+        </button>
+      </div>
       <nav>
         <button className="nav-item" onClick={onReceived}>
           <Mail size={16} />
@@ -262,6 +269,7 @@ function App() {
   const [screen, setScreen] = useState("login");
   const [modal, setModal] = useState(false);
   const [requests, setRequests] = useState(initialRequests);
+  const [previousScreen, setPreviousScreen] = useState("");
 
   //Received states
 
@@ -270,7 +278,7 @@ function App() {
       {screen === "login" && (
         <LoginView
           onForgot={() => setScreen("recover")}
-          onLogin={() => setScreen("requestsSent")}
+          onLogin={() => setScreen("received")}
         />
       )}
       {screen === "recover" && (
@@ -294,9 +302,9 @@ function App() {
                 <p>Solicita licencias o materias incompletas.</p>
               </div>
               <div className="profile">
-                <div className="avatar">R</div>
+                <div className="avatar">D</div>
                 <div className="profile-meta">
-                  <strong>Robert</strong>
+                  <strong>Diego</strong>
                   <span>Estudiante</span>
                 </div>
                 {/* <ChevronDown size={16} /> */}
@@ -305,17 +313,28 @@ function App() {
             {screen === "received" && (
               <Received
                 received={received}
-                onOpen={() => setScreen("detail")}
+                onOpen={() => {
+                  setScreen("detail");
+                  setPreviousScreen("received");
+                }}
               />
             )}
             {screen === "requestsSent" && (
               <RequestsSent
-                onOpen={() => setScreen("detail")}
+                onOpen={() => {
+                  setScreen("detail");
+                  setPreviousScreen("requestsSent");
+                }}
                 requests={requests}
               />
             )}{" "}
             {screen === "detail" && (
-              <RequestDetail onBack={() => setScreen("requestsSent")} />
+              <RequestDetail
+                onBack={() => {
+                  setScreen(previousScreen);
+                  setPreviousScreen("");
+                }}
+              />
             )}{" "}
             {screen === "password" && <PasswordChange />}
           </main>

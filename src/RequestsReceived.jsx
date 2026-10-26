@@ -33,7 +33,7 @@ function Received({ received, onOpen }) {
   }, [received, filter]);
   const toggleOne = (id) => {
     setSelected((old) =>
-      old.includes(id) ? old.filter((r) => r.id != id) : [...old, id],
+      old.includes(id) ? old.filter((i) => i != id) : [...old, id],
     );
     // visibleRequests.map((r) => r.id === id);
   };
@@ -140,16 +140,23 @@ function Received({ received, onOpen }) {
           </thead> */}
           <tbody>
             {visibleRequests.map((request) => (
-              <tr key={request.id} className={request.read ? "" : "unread"}>
+              <tr
+                key={request.id}
+                className={request.read ? "" : "unread"}
+                onClick={onOpen}
+              >
                 <td>
                   <input
                     type="checkbox"
                     aria-label={`Seleccionar solicitud ${request.id}`}
                     checked={selected.includes(request.id)}
                     onChange={() => toggleOne(request.id)}
+                    // this prevents to end up to the top of the tr of the event bubble
+                    onClick={(e) => e.stopPropagation()}
                   />
                 </td>
-                <td className="emailupb-subject">Asunto: {request.subject}</td>
+
+                <td className="emailupb-subject">{request.subject}</td>
                 <td className="emailupb-description">{request.description}</td>
                 <td className="emailupb-date">{request.date}</td>
               </tr>

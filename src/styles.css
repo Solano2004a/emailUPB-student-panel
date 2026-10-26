@@ -38,25 +38,42 @@ textarea {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 140px;
+  width: 180px;
   min-width: 140px;
   height: 100vh;
-  background: #050505;
+  background: #282828;
   color: #fff;
   padding: 8px;
   display: flex;
   flex-direction: column;
+  /* gap: 14px; */
+}
+
+.top {
+  /* top: 20px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  gap: 14px;
 }
 .brand {
   height: 31px;
-  background: #fafafa;
-  color: #444;
+  /* background: #fafafa; */
+  color: #cac9c9;
   display: flex;
-  align-items: center;
+  align-items: end;
   gap: 5px;
   padding: 0 7px;
-  font-size: 13px;
+  font-size: 32px;
+  font-weight: 700;
 }
+.brand-tiny {
+  font-weight: 500;
+  font-size: 18px;
+}
+/* .brand-bold {
+} */
 .brand-mark {
   width: 22px;
   height: 22px;
@@ -81,16 +98,20 @@ textarea {
   line-height: 1.35;
   transition: 0.18s;
 }
+
 .nav-item:hover {
-  background: #2a292e;
+  background: #4c4c4c;
   color: #fff;
+  cursor: pointer;
 }
 .nav-item.active {
   background: #f3f2f5;
   color: #24232a;
   font-weight: 600;
 }
-
+.nav-item span {
+  font-size: 13px;
+}
 .sidebar-bottom {
   margin-top: auto;
   display: flex;
@@ -98,21 +119,26 @@ textarea {
   gap: 16px;
 }
 .request-btn {
+  width: 100%;
   margin-top: 14px;
-  height: 24px;
+  height: 40px;
   border: 0;
   border-radius: 4px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  /* justify-content: center; */
+  gap: 8px;
   padding: 0 7px;
-  font-size: 10px;
+  font-size: 16px;
+  color: #474646;
+  font-weight: 500;
+  cursor: pointer;
 }
 .sidebar nav {
   margin-top: 34px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 4px;
 }
 .sidebar nav button {
   background: none;
@@ -134,6 +160,7 @@ textarea {
   border-radius: 8px;
   padding: 10px 12px;
   font-size: 12px;
+  cursor: pointer;
 }
 .logout:hover {
   background: #38373f;
@@ -145,7 +172,7 @@ textarea {
   padding: 0 8px;
 }
 .main-panel {
-  margin-left: 140px;
+  margin-left: 180px;
   background: #f7f7fa;
   border: 1px solid #dedde5;
   border-radius: 0 18px 18px 0;
@@ -177,7 +204,7 @@ textarea {
     sans-serif;
   letter-spacing: -1px;
   margin: 7px 0 5px;
-  color: #22212a;
+  color: #37363f;
 }
 .topbar p,
 .section-heading p {
@@ -262,7 +289,7 @@ textarea {
 .emailupb-toolbar-right {
   gap: 10px;
   color: #858585;
-  font-size: 10px;
+  font-size: 13px;
 }
 .emailupb-toolbar input[type="checkbox"],
 .emailupb-table input[type="checkbox"] {
@@ -360,13 +387,18 @@ textarea {
 }
 .emailupb-table .emailupb-subject {
   font-weight: 400;
+  font-size: 12px;
 }
 .emailupb-table tr.unread .emailupb-subject {
   color: #777;
   font-weight: 500;
 }
+.emailupb-table .emailupb-description {
+  font-size: 12px;
+}
 .emailupb-table .emailupb-date {
   padding-left: 10px;
+  font-size: 13px;
 }
 .emailupb-empty {
   height: 70px;
@@ -433,11 +465,13 @@ textarea {
 .requests-table .request-subject {
   width: 200px;
   margin-left: 5.2%;
+  font-size: 13px;
 }
 
 /* Columna de la descripción */
 .requests-table .request-description {
   width: 250px;
+  font-size: 13px;
   /* padding-left: 40%; */
 }
 
@@ -446,6 +480,7 @@ textarea {
   width: 100px;
   margin-right: 10.5%;
   text-align: right;
+  font-size: 13px;
 }
 
 /********************************
@@ -516,7 +551,7 @@ textarea {
   align-items: center;
 }
 .modal-titlebar h2 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 }
 .modal-content {
@@ -536,8 +571,9 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  font-size: 9px;
+  font-size: 13px;
   font-weight: 500;
+  color: #494949;
 }
 .form-left input,
 .form-left select,
@@ -547,7 +583,8 @@ textarea {
   border-radius: 4px;
   height: 32px;
   padding: 0 9px;
-  font-size: 8px;
+  font-size: 12px;
+  color: #656565;
 }
 .form-right textarea {
   height: 74px;
@@ -575,9 +612,9 @@ textarea {
 }
 .modal-actions button {
   border: 0;
-  border-radius: 4px;
-  padding: 7px 17px;
-  font-size: 11px;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 13px;
 }
 .modal-actions button:last-child {
   background: #404040;
@@ -600,29 +637,34 @@ textarea {
   border: 0;
   background: none;
   padding: 2px 0;
+  cursor: pointer;
 }
 .detail-title h2 {
   margin: 0;
   font-size: 20px;
   font-weight: 500;
+  color: #5a5959;
 }
 .detail-title p {
   margin: 10px 0 0;
-  font-size: 10px;
+  font-size: 14px;
+  color: #5a5959;
 }
 .detail-info {
   display: flex;
   justify-content: space-between;
   max-width: 455px;
   margin: 18px 0 17px 26px;
-  font-size: 10px;
+  font-size: 14px;
+  color: #5a5959;
 }
 .detail-section {
   margin: 0 0 22px 26px;
   display: flex;
   flex-direction: column;
   gap: 9px;
-  font-size: 10px;
+  font-size: 14px;
+  color: #5a5959;
 }
 .description-box {
   width: 460px;
@@ -630,8 +672,8 @@ textarea {
   background: #f7f7f7;
   border-radius: 3px;
   padding: 10px;
-  color: #555;
-  font-size: 9px;
+  color: #5a5959;
+  font-size: 13px;
 }
 .attachment-list {
   display: flex;
@@ -659,20 +701,23 @@ textarea {
   margin: 12px -36px 16px;
 }
 .password-form {
-  width: 265px;
+  width: 450px;
+  height: 600px;
 }
 .password-form h3 {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 600;
   margin: 0 0 35px;
+  color: #404040;
 }
 .password-form label {
   display: flex;
   flex-direction: column;
   gap: 7px;
   margin-bottom: 20px;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 600;
+  color: #545454;
 }
 .password-form input {
   height: 24px;
@@ -680,16 +725,18 @@ textarea {
   border-radius: 3px;
   background: #f6f6f6;
   padding: 0 9px;
-  font-size: 9px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #787878;
 }
 .save-password {
-  height: 26px;
+  /* height: 26px; */
   border: 0;
-  border-radius: 3px;
+  border-radius: 8px;
   background: #4a4a4a;
   color: #fff;
-  font-size: 10px;
-  padding: 0 9px;
+  font-size: 16px;
+  padding: 8px 16px;
 }
 
 /*******************************
@@ -724,6 +771,7 @@ body:has(.card) {
 button,
 input {
   font-family: inherit;
+  font-size: large;
 }
 
 /* ================================
