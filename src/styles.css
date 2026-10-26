@@ -241,7 +241,144 @@ textarea {
 }
 
 /********************************
-/** REQUESTS SENT STYLING
+/** REQUESTS RECEIVED
+/********************************/
+.emailupb-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 7.5% 0 36px;
+  border-top: 1px solid #d9d9dc;
+  border-bottom: 1px solid #d9d9dc;
+  background: #fff;
+}
+.emailupb-toolbar-left,
+.emailupb-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.emailupb-toolbar-right {
+  gap: 10px;
+  color: #858585;
+  font-size: 10px;
+}
+.emailupb-toolbar input[type="checkbox"],
+.emailupb-table input[type="checkbox"] {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  accent-color: #111;
+  cursor: pointer;
+}
+.emailupb-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  border: 0;
+  background: transparent;
+  color: #8a8a8a;
+  cursor: pointer;
+}
+.emailupb-icon-button:hover {
+  color: #111;
+}
+.emailupb-toolbar select {
+  width: 38px;
+  border: 0;
+  appearance: auto;
+  outline: none;
+  color: transparent;
+  background: #fff;
+  cursor: pointer;
+  font-size: 10px;
+}
+.emailupb-toolbar select:focus {
+  color: #555;
+  width: 100px;
+}
+.emailupb-delete {
+  margin-left: 12px;
+}
+.emailupb-table-wrap {
+  width: 100%;
+  overflow: auto;
+  background: #fff;
+}
+.emailupb-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background: #fff;
+  font-size: 9px;
+}
+.emailupb-table .check-col {
+  width: 8.2%;
+}
+.emailupb-table .subject-col {
+  width: 19%;
+}
+.emailupb-table .description-col {
+  width: 58%;
+}
+.emailupb-table .date-col {
+  width: 14.8%;
+}
+.emailupb-table thead {
+  height: 38px;
+}
+.emailupb-table th {
+  height: 38px;
+  padding: 0 8px;
+  border-bottom: 1px solid #ddd;
+  color: #171717;
+  font-size: 9px;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+}
+.emailupb-table th:first-child,
+.emailupb-table td:first-child {
+  padding-left: 15px;
+}
+.emailupb-table tbody tr {
+  height: 38px;
+  border-bottom: 1px solid #dedede;
+}
+.emailupb-table tbody tr:hover {
+  background: #f8f8fa;
+}
+.emailupb-table td {
+  padding: 0 8px;
+  color: #8b8b8b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.emailupb-table .emailupb-subject {
+  font-weight: 400;
+}
+.emailupb-table tr.unread .emailupb-subject {
+  color: #777;
+  font-weight: 500;
+}
+.emailupb-table .emailupb-date {
+  padding-left: 10px;
+}
+.emailupb-empty {
+  height: 70px;
+  text-align: center;
+  color: #888 !important;
+}
+/********************************
+/** END - REQUESTS RECEIVED
+/********************************/
+
+/********************************
+/** REQUESTS SENT
 /********************************/
 
 /* Contenedor de la tabla */

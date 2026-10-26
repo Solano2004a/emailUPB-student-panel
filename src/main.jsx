@@ -12,11 +12,13 @@ import {
   RotateCcw,
   ChevronDown,
   Upload,
+  PencilLine,
 } from "lucide-react";
 import RequestDetail from "./RequestDetail";
 import PasswordChange from "./PasswordChange";
 import "./styles.css";
 import { RequestModal } from "./wizard";
+import Received from "./RequestsReceived";
 const initialRequests = [
   {
     id: 1,
@@ -82,6 +84,81 @@ const initialRequests = [
     status: "no respondido",
   },
 ];
+
+const received = [
+  {
+    id: 1,
+    subject: "Asunto",
+    description: "descripcion",
+    date: "17 ago",
+    status: "respondido",
+    read: false,
+  },
+  {
+    id: 2,
+    subject: "Asunto",
+    description: "descripcion",
+    date: "24 sep",
+    status: "respondido",
+    read: false,
+  },
+  {
+    id: 3,
+    subject: "Asunto",
+    description: "descripcion",
+    date: "15 jun",
+    status: "respondido",
+    read: false,
+  },
+  {
+    id: 4,
+    subject: "Asunto",
+    description: "descripcion",
+    date: "21 mar",
+    status: "respondido",
+    read: false,
+  },
+  {
+    id: 5,
+    subject: "Asunto",
+    description: "descripcion",
+    date: "20 mar",
+    status: "respondido",
+    read: false,
+  },
+  {
+    id: 6,
+    subject: "Asunto",
+    description: "descripcion",
+    date: "12 feb",
+    status: "respondido",
+    read: false,
+  },
+  {
+    id: 7,
+    subject: "Asunto",
+    description: "descripcion",
+    date: "01 ene",
+    status: "respondido",
+    read: false,
+  },
+  {
+    id: 8,
+    subject: "Asunto",
+    description: "descripcion",
+    date: "04/05/24",
+    status: "respondido",
+    read: false,
+  },
+  {
+    id: 9,
+    subject: "Asunto",
+    description: "descripcion",
+    date: "20/01/23",
+    status: "respondido",
+    read: false,
+  },
+];
 function Logo() {
   return (
     <div className="brand">
@@ -97,17 +174,21 @@ function Avatar() {
     </div>
   );
 }
-function Sidebar({ onRequest, onRequests, onPassword, onLogout }) {
+function Sidebar({ onRequest, onReceived, onRequests, onPassword, onLogout }) {
   return (
     <aside className="sidebar">
       <Logo />
       <button className="request-btn" onClick={onRequest}>
-        <Send size={14} />
+        <PencilLine size={14} />
         Solicitar
       </button>
       <nav>
-        <button className="nav-item" onClick={onRequests}>
+        <button className="nav-item" onClick={onReceived}>
           <Mail size={16} />
+          <span>Recibidos</span>
+        </button>
+        <button className="nav-item" onClick={onRequests}>
+          <Send size={16} />
           <span>
             Solicitudes
             <br />
@@ -180,8 +261,9 @@ function Calendar({ value, onChange }) {
 function App() {
   const [screen, setScreen] = useState("login");
   const [modal, setModal] = useState(false);
-  const [filter, setFilter] = useState("todos");
   const [requests, setRequests] = useState(initialRequests);
+
+  //Received states
 
   return (
     <>
@@ -198,6 +280,7 @@ function App() {
         <div className="app">
           <Sidebar
             onRequest={() => setModal(true)}
+            onReceived={() => setScreen("received")}
             onRequests={() => setScreen("requestsSent")}
             onPassword={() => setScreen("password")}
             onLogout={() => setScreen("login")}
@@ -219,6 +302,12 @@ function App() {
                 {/* <ChevronDown size={16} /> */}
               </div>
             </header>
+            {screen === "received" && (
+              <Received
+                received={received}
+                onOpen={() => setScreen("detail")}
+              />
+            )}
             {screen === "requestsSent" && (
               <RequestsSent
                 onOpen={() => setScreen("detail")}
