@@ -30,15 +30,6 @@ import {
   replace,
 } from "react-router-dom";
 
-function Avatar() {
-  return (
-    <div className="avatar">
-      <div className="avatar-head" />
-      <div className="avatar-body" />
-    </div>
-  );
-}
-
 function Calendar({ value, onChange }) {
   return (
     <div className="calendar">

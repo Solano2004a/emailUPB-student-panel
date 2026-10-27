@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 
 import Received from "./RequestsReceived";
 import { RequestsSent } from "./RequestsSent";
@@ -203,9 +203,9 @@ function Sidebar({ onRequest, onReceived, onRequests, onPassword, onLogout }) {
     </aside>
   );
 }
-
+//UseCOntext step 1: Create a context
+// const PostContext = createContext();
 function StudentPanel({ isAuthenticated, setIsAuthenticated }) {
-  const [screen, setScreen] = useState("login");
   const [modal, setModal] = useState(false);
   const [requests, setRequests] = useState(initialRequests);
   const [previousSection, setPreviousSection] = useState("");
@@ -214,6 +214,13 @@ function StudentPanel({ isAuthenticated, setIsAuthenticated }) {
 
   const navigate = useNavigate();
   return (
+    //useCOntext step 2: Provide value to child components
+    // <PostContext.Provider
+    //   value={{
+    //     received,
+    //     setReceived,
+    //   }}
+    // >
     <div className="app">
       <Sidebar
         onRequest={() => setModal(true)}
@@ -272,6 +279,7 @@ function StudentPanel({ isAuthenticated, setIsAuthenticated }) {
 
       <RequestModal open={modal} onClose={() => setModal(false)} />
     </div>
+    // </PostContext.Provider>
   );
 }
 export default StudentPanel;

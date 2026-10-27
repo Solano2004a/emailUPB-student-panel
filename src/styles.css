@@ -667,10 +667,14 @@ textarea {
   border-radius: 8px;
   padding: 8px 18px;
   font-size: 13px;
+  color: #444444;
+}
+.modal-actions button:hover {
+  cursor: pointer;
 }
 .modal-actions button:last-child {
   background: #404040;
-  color: #fff;
+  color: #e8e8e8;
 }
 .detail-page,
 .password-page {
@@ -1105,6 +1109,32 @@ input {
   color: #666666;
 }
 
+/********************************
+/** Start and End permissions
+/********************************/
+.date-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.date-row > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.date-row span {
+  font-size: 10px;
+  color: #8b8994;
+}
+.date-row input {
+  width: 100%;
+  border: 1px solid #e4e2ea;
+  border-radius: 7px;
+  padding: 9px 8px;
+  font-size: 11px;
+  color: #514f5a;
+  background: #fff;
+}
 /* ================================
    DISEÑO RESPONSIVE
    ================================ */
@@ -1221,6 +1251,9 @@ input {
     height: 38px;
   }
 
+  .date-row {
+    grid-template-columns: 1fr;
+  }
   /*******************************
   /** REQQUESTS SENT
   /*******************************/
