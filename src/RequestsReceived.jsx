@@ -1,7 +1,9 @@
 import React, { useState, useMemo } from "react";
 import { Icon, RotateCwIcon, Trash2, ChevronDown } from "lucide-react";
+import { useRequests } from "./contexts/RequestContext";
 
-function Received({ received, setReceived, onOpen }) {
+function Received({ setReceived, onOpen }) {
+  const { received, deleteReceived } = useRequests();
   const [selected, setSelected] = useState([]);
   const [filter, setFilter] = useState("Todas");
   const [notice, setNotice] = useState("");
@@ -48,11 +50,13 @@ function Received({ received, setReceived, onOpen }) {
   //       ]);
   // };
 
-  const deleteSelected = () => {
+  function deleteSelected() {
     if (!selected.length) return;
-    setReceived((old) => old.filter((r) => !selected.includes(r.id)));
+    selected.map((id) => deleteReceived(id));
+    // deleteRequest(selected.includes());
+    // setReceived((old) => old.filter((r) => !selected.includes(r.id)));
     setSelected([]);
-  };
+  }
   const refresh = () => {
     // Implement the fetch incoming requests here
   };
@@ -141,7 +145,7 @@ function Received({ received, setReceived, onOpen }) {
               <tr
                 key={request.id}
                 className={request.read ? "" : "unread"}
-                onClick={onOpen}
+                onClick={() => onOpen(request.id)}
               >
                 <td>
                   <input

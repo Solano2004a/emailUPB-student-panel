@@ -212,6 +212,8 @@ function StudentPanel({ isAuthenticated, setIsAuthenticated }) {
   const [section, setSection] = useState("received");
   const [received, setReceived] = useState(initialReceived);
 
+  const [selectedRequestId, setSelectedRequestId] = useState(null);
+
   const navigate = useNavigate();
   return (
     //useCOntext step 2: Provide value to child components
@@ -249,9 +251,8 @@ function StudentPanel({ isAuthenticated, setIsAuthenticated }) {
         </header>
         {section === "received" && (
           <Received
-            received={received}
-            setReceived={setReceived}
-            onOpen={() => {
+            onOpen={(id) => {
+              setSelectedRequestId(id);
               setSection("detail");
               setPreviousSection("received");
             }}
@@ -259,15 +260,16 @@ function StudentPanel({ isAuthenticated, setIsAuthenticated }) {
         )}
         {section === "requestsSent" && (
           <RequestsSent
-            onOpen={() => {
+            onOpen={(id) => {
+              setSelectedRequestId(id);
               setSection("detail");
               setPreviousSection("requestsSent");
             }}
-            requests={requests}
           />
         )}{" "}
         {section === "detail" && (
           <RequestDetail
+            selectedRequestId={selectedRequestId}
             onBack={() => {
               setSection(previousSection);
               setPreviousSection("");

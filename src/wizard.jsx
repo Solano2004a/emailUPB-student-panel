@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Upload } from "lucide-react";
+import { useRequests } from "./contexts/RequestContext";
 function RequestModal({ open, onClose }) {
   const [type, setType] = useState("otro");
   const now = new Date();
@@ -10,6 +11,9 @@ function RequestModal({ open, onClose }) {
   const [module, setModule] = useState("");
   const [subject, setSubject] = useState("");
   const [description, setDescription] = useState("");
+
+  const { createRequest } = useRequests();
+
   if (!open) return null;
 
   function handleSubmit(e) {
@@ -23,9 +27,10 @@ function RequestModal({ open, onClose }) {
       date,
       requestStart,
       requestEnd,
+      status: "no respondido",
     };
     console.log(newRequest);
-
+    createRequest(newRequest);
     onClose();
   }
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import { RecoverView, LoginView } from "./login/Login";
 import StudentPanel from "./StudentPanel";
+
 import { RequestsSent } from "./RequestsSent";
 import emailUPBlogo from "./assets/emailUPBlogo.png";
 import {
@@ -29,6 +30,7 @@ import {
   useNavigate,
   replace,
 } from "react-router-dom";
+import { RequestProvider } from "./contexts/RequestContext";
 
 function Calendar({ value, onChange }) {
   return (
@@ -78,43 +80,46 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const navigate = useNavigate();
-  return (
-    <Routes>
-      <Route
-        path="/login"
-        element={
-          isAuthenticated ? (
-            <Navigate to="/student-panel" />
-          ) : (
-            <LoginView
-              onForgot={() => navigate("/recover", { replace: true })}
-              onLogin={() => setIsAuthenticated(true)}
-            />
-          )
-        }
-      />
 
-      <Route
-        path="/recover"
-        element={
-          <RecoverView onBack={() => navigate("/login", { replace: true })} />
-        }
-      />
-      <Route
-        path="/student-panel"
-        element={
-          isAuthenticated ? (
-            <StudentPanel
-              isAuthenticated={isAuthenticated}
-              setIsAuthenticated={setIsAuthenticated}
-            />
-          ) : (
-            <Navigate to="/login" replace />
-          )
-        }
-      />
-      <Route path="*" element={<Navigate to="/login" />} />
-    </Routes>
+  return (
+    <RequestProvider>
+      <Routes>
+        <Route
+          path="/login"
+          element={
+            isAuthenticated ? (
+              <Navigate to="/student-panel" />
+            ) : (
+              <LoginView
+                onForgot={() => navigate("/recover", { replace: true })}
+                onLogin={() => setIsAuthenticated(true)}
+              />
+            )
+          }
+        />
+
+        <Route
+          path="/recover"
+          element={
+            <RecoverView onBack={() => navigate("/login", { replace: true })} />
+          }
+        />
+        <Route
+          path="/student-panel"
+          element={
+            isAuthenticated ? (
+              <StudentPanel
+                isAuthenticated={isAuthenticated}
+                setIsAuthenticated={setIsAuthenticated}
+              />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          }
+        />
+        <Route path="*" element={<Navigate to="/login" />} />
+      </Routes>
+    </RequestProvider>
   );
 }
 

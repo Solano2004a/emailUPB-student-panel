@@ -1,0 +1,183 @@
+{
+  "RequestsSent": [
+    {
+      "id": "2",
+      "subject": "Consulta sobre los requisitos de inscripción",
+      "description": "Quisiera conocer los documentos necesarios para completar mi inscripción.",
+      "program": "Diplomado en análisis de datos",
+      "module": "Introducción a la ciberseguridad",
+      "date": "24 sep",
+      "requestStart": "2026-09-24",
+      "requestEnd": "2026-11-24",
+      "status": "respondido"
+    },
+    {
+      "id": "3",
+      "subject": "Solicitud de ampliación de plazo",
+      "description": "Solicito una ampliación del plazo para completar las actividades del módulo.",
+      "program": "Diplomado en seguridad informática",
+      "module": "Seguridad de redes",
+      "date": "15 jun",
+      "requestStart": "2026-06-15",
+      "requestEnd": "2026-08-15",
+      "status": "no respondido"
+    },
+    {
+      "id": "4",
+      "subject": "Consulta sobre el contenido del módulo",
+      "description": "Solicito información adicional sobre los temas que se desarrollarán durante el módulo.",
+      "program": "Diplomado en análisis de datos",
+      "module": "Criptografía",
+      "date": "21 mar",
+      "requestStart": "2026-03-21",
+      "requestEnd": "2026-05-21",
+      "status": "respondido"
+    },
+    {
+      "id": "5",
+      "subject": "Solicitud de cambio de módulo",
+      "description": "Quisiera consultar la posibilidad de cambiar de módulo debido a motivos académicos.",
+      "program": "Diplomado en seguridad informática",
+      "module": "Introducción a la ciberseguridad",
+      "date": "20 mar",
+      "requestStart": "2026-03-20",
+      "requestEnd": "2026-05-20",
+      "status": "no respondido"
+    },
+    {
+      "id": "6",
+      "subject": "Consulta sobre las evaluaciones",
+      "description": "Solicito información sobre las fechas y modalidades de las evaluaciones del módulo.",
+      "program": "Diplomado en análisis de datos",
+      "module": "Seguridad de redes",
+      "date": "12 feb",
+      "requestStart": "2026-02-12",
+      "requestEnd": "2026-04-12",
+      "status": "respondido"
+    },
+    {
+      "id": "7",
+      "subject": "Solicitud de acceso a materiales",
+      "description": "Solicito acceso a los materiales de estudio y recursos complementarios del módulo.",
+      "program": "Diplomado en seguridad informática",
+      "module": "Criptografía",
+      "date": "01 ene",
+      "requestStart": "2026-01-01",
+      "requestEnd": "2026-03-01",
+      "status": "no respondido"
+    },
+    {
+      "id": "8",
+      "subject": "Consulta sobre la certificación",
+      "description": "Quisiera conocer los requisitos académicos necesarios para obtener el certificado del programa.",
+      "program": "Diplomado en análisis de datos",
+      "module": "Introducción a la ciberseguridad",
+      "date": "04/05/24",
+      "requestStart": "2024-05-04",
+      "requestEnd": "2024-07-04",
+      "status": "respondido"
+    },
+    {
+      "id": "9",
+      "subject": "Solicitud de revisión de calificaciones",
+      "description": "Solicito una revisión de las calificaciones registradas en el módulo.",
+      "program": "Diplomado en seguridad informática",
+      "module": "Seguridad de redes",
+      "date": "20/01/23",
+      "requestStart": "2023-01-20",
+      "requestEnd": "2023-03-20",
+      "status": "no respondido"
+    },
+    {
+      "id": "l4PnNA-nBro",
+      "subject": "",
+      "description": "ddddddddddd",
+      "program": "",
+      "module": "",
+      "date": "2026-10-31",
+      "requestStart": "2026-10-31",
+      "requestEnd": "2026-10-31",
+      "status": "no respondido"
+    },
+    {
+      "id": "tSb7oXsKDIY",
+      "subject": "",
+      "description": "",
+      "program": "",
+      "module": "",
+      "date": "2026-11-01",
+      "requestStart": "2026-11-01",
+      "requestEnd": "2026-11-01",
+      "status": "no respondido"
+    },
+    {
+      "id": "QyD_uj_OM74",
+      "subject": "",
+      "description": "",
+      "program": "",
+      "module": "",
+      "date": "2026-11-01",
+      "requestStart": "2026-11-01",
+      "requestEnd": "2026-11-01",
+      "status": "no respondido"
+    },
+    {
+      "id": "jMm_8THiq_0",
+      "subject": "",
+      "description": "",
+      "program": "",
+      "module": "",
+      "date": "2026-11-01",
+      "requestStart": "2026-11-01",
+      "requestEnd": "2026-11-01",
+      "status": "no respondido"
+    },
+    {
+      "id": "JGVykpDsMw4",
+      "subject": "",
+      "description": "",
+      "program": "",
+      "module": "",
+      "date": "2026-11-01",
+      "requestStart": "2026-11-01",
+      "requestEnd": "2026-11-01",
+      "status": "no respondido"
+    },
+    {
+      "id": "HPOW_p0aUHw",
+      "subject": "fff",
+      "description": "",
+      "program": "",
+      "module": "",
+      "date": "2026-11-01",
+      "requestStart": "2026-11-01",
+      "requestEnd": "2026-11-01",
+      "status": "no respondido"
+    }
+  ],
+  "requestsReceived": [
+    {
+      "id": "6",
+      "subject": "Consulta sobre las evaluaciones",
+      "description": "Solicito información sobre las fechas y modalidades de las evaluaciones del módulo.",
+      "program": "Diplomado en análisis de datos",
+      "module": "Seguridad de redes",
+      "date": "12 feb",
+      "requestStart": "2026-02-12",
+      "requestEnd": "2026-04-12",
+      "status": "respondido"
+    },
+    {
+      "id": "8",
+      "subject": "Consulta sobre la certificación",
+      "description": "Quisiera conocer los requisitos académicos necesarios para obtener el certificado del programa.",
+      "program": "Diplomado en análisis de datos",
+      "module": "Introducción a la ciberseguridad",
+      "date": "04/05/24",
+      "requestStart": "2024-05-04",
+      "requestEnd": "2024-07-04",
+      "status": "respondido"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

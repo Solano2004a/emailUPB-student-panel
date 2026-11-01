@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowLeft, FileText } from "lucide-react";
+import { useRequests } from "./contexts/RequestContext";
 
 //TODO:implement the request and display that request to the requests list
-export default function RequestDetail({ onBack }) {
+export default function RequestDetail({ selectedRequestId, onBack }) {
+  const { getRequestById } = useRequests();
+  const [request, setRequest] = useState({});
+  useEffect(() => {
+    async function fetchRequest() {
+      const data = await getRequestById(selectedRequestId);
+      setRequest(data);
+    }
+
+    fetchRequest();
+  }, [selectedRequestId, getRequestById]);
+  // const request = getRequestById(selectedRequestId);
   return (
     <section className="detail-page">
       <div className="detail-title">
@@ -11,7 +23,8 @@ export default function RequestDetail({ onBack }) {
         </button>
         <div>
           <h2>Solicitud de licencia</h2>
-          <p>Nombre de programa - Nombre del modulo</p>
+          <p>{`${request.program} - ${request.module}`}</p>
+          {/* <p>Nombre de programa - Nombre del modulo</p> */}
         </div>
       </div>
       <div className="detail-info">
@@ -19,15 +32,16 @@ export default function RequestDetail({ onBack }) {
         <strong>código estudiantil: 55555</strong>
       </div>
       <div className="detail-section">
-        <span>Motivo de la licencia</span>
+        <span>{`Motivo de la licencia: ${request.subject}`}</span>
         <div className="description-box">
-          <span>Descripción</span>
+          <span>{request.description}</span>
         </div>
       </div>
       <div className="detail-section">
         <span>Periodo de la licencia</span>
         <strong>
-          Inicio: 09/09/25&nbsp;&nbsp; - &nbsp;&nbsp;fin: 13/09/25
+          {`Inicio: ${request.requestStart}`}&nbsp;&nbsp; - &nbsp;&nbsp;
+          {`fin: ${request.requestEnd}`}
         </strong>
       </div>
       <div className="detail-section">
