@@ -23,11 +23,11 @@ function RequestProvider({ children }) {
         const receivedRes = await fetch(`${BASE_URL}/requestsReceived`);
         const receivedData = await receivedRes.json();
         // console.log(data);
-        setRequests(sentData);
+        setRequests(sentData.reverse());
         setReceived(receivedData);
         // console.log(received);
       } catch {
-        alert("There was an error while trying to fetch the requests");
+        alert("Hubo un error al intentar obtener las solicitudes");
       }
     }
 
@@ -43,7 +43,7 @@ function RequestProvider({ children }) {
       // console.log(data);
       return data;
     } catch {
-      alert("something went worng when trying to get the request details");
+      alert("sHubo un error al intentar obtener los detalles de la solicitud");
     }
   }, []);
 
@@ -63,7 +63,7 @@ function RequestProvider({ children }) {
       await fetch(`${BASE_URL}/requestsReceived/${id}`, { method: "DELETE" });
       setReceived((received) => received.filter((r) => r.id !== id));
     } catch {
-      alert("Something went wrong while trying to delete request");
+      alert("Hubo un error al intentar eliminar la solicitud");
     }
   }
 
@@ -77,9 +77,10 @@ function RequestProvider({ children }) {
         },
       });
       const data = await res.json();
-      setRequests((old) => [...old, data]);
+      setRequests((old) => [data, ...old]);
+      console.log(requests);
     } catch {
-      alert("something went wrong while trying to create a new request");
+      alert("Hubo un error al intentar crear la solicitud");
     }
   }
   return (

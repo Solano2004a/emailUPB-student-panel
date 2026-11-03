@@ -30,8 +30,9 @@ function RequestModal({ open, onClose }) {
       requestStart,
       requestEnd,
       status: "no respondido",
+      DateReply: null,
     };
-    console.log(newRequest);
+    // console.log(newRequest);
     createRequest(newRequest);
     onClose();
   }

@@ -9,7 +9,8 @@
       "date": "24 sep",
       "requestStart": "2026-09-24",
       "requestEnd": "2026-11-24",
-      "status": "respondido"
+      "status": "respondido",
+      "DateReply": "2023-09-26"
     },
     {
       "id": "3",
@@ -20,7 +21,8 @@
       "date": "15 jun",
       "requestStart": "2026-06-15",
       "requestEnd": "2026-08-15",
-      "status": "no respondido"
+      "status": "no respondido",
+      "DateReply": null
     },
     {
       "id": "4",
@@ -31,7 +33,8 @@
       "date": "21 mar",
       "requestStart": "2026-03-21",
       "requestEnd": "2026-05-21",
-      "status": "respondido"
+      "status": "respondido",
+      "DateReply": "2026-03-25"
     },
     {
       "id": "5",
@@ -42,7 +45,8 @@
       "date": "20 mar",
       "requestStart": "2026-03-20",
       "requestEnd": "2026-05-20",
-      "status": "no respondido"
+      "status": "no respondido",
+      "DateReply": null
     },
     {
       "id": "6",
@@ -53,7 +57,8 @@
       "date": "12 feb",
       "requestStart": "2026-02-12",
       "requestEnd": "2026-04-12",
-      "status": "respondido"
+      "status": "respondido",
+      "DateReply": "2026-02-15"
     },
     {
       "id": "7",
@@ -64,7 +69,8 @@
       "date": "01 ene",
       "requestStart": "2026-01-01",
       "requestEnd": "2026-03-01",
-      "status": "no respondido"
+      "status": "no respondido",
+      "DateReply": null
     },
     {
       "id": "8",
@@ -75,7 +81,8 @@
       "date": "04/05/24",
       "requestStart": "2024-05-04",
       "requestEnd": "2024-07-04",
-      "status": "respondido"
+      "status": "respondido",
+      "DateReply": "2024-05-08"
     },
     {
       "id": "9",
@@ -83,10 +90,11 @@
       "description": "Solicito una revisión de las calificaciones registradas en el módulo.",
       "program": "Diplomado en seguridad informática",
       "module": "Seguridad de redes",
-      "date": "20/01/23",
+      "date": "2023-01-10",
       "requestStart": "2023-01-20",
       "requestEnd": "2023-03-20",
-      "status": "no respondido"
+      "status": "no respondido",
+      "DateReply": null
     },
     {
       "id": "l4PnNA-nBro",
@@ -97,7 +105,8 @@
       "date": "2026-10-31",
       "requestStart": "2026-10-31",
       "requestEnd": "2026-10-31",
-      "status": "no respondido"
+      "status": "no respondido",
+      "DateReply": null
     },
     {
       "id": "tSb7oXsKDIY",
@@ -108,7 +117,8 @@
       "date": "2026-11-01",
       "requestStart": "2026-11-01",
       "requestEnd": "2026-11-01",
-      "status": "no respondido"
+      "status": "no respondido",
+      "DateReply": null
     },
     {
       "id": "QyD_uj_OM74",
@@ -119,7 +129,8 @@
       "date": "2026-11-01",
       "requestStart": "2026-11-01",
       "requestEnd": "2026-11-01",
-      "status": "no respondido"
+      "status": "no respondido",
+      "DateReply": null
     },
     {
       "id": "jMm_8THiq_0",
@@ -130,7 +141,8 @@
       "date": "2026-11-01",
       "requestStart": "2026-11-01",
       "requestEnd": "2026-11-01",
-      "status": "no respondido"
+      "status": "no respondido",
+      "DateReply": null
     },
     {
       "id": "JGVykpDsMw4",
@@ -141,7 +153,8 @@
       "date": "2026-11-01",
       "requestStart": "2026-11-01",
       "requestEnd": "2026-11-01",
-      "status": "no respondido"
+      "status": "no respondido",
+      "DateReply": null
     },
     {
       "id": "HPOW_p0aUHw",
@@ -152,7 +165,8 @@
       "date": "2026-11-01",
       "requestStart": "2026-11-01",
       "requestEnd": "2026-11-01",
-      "status": "no respondido"
+      "status": "no respondido",
+      "DateReply": null
     },
     {
       "id": "jRKW9YQf_pQ",
@@ -163,7 +177,68 @@
       "date": "2026-11-03",
       "requestStart": "2026-11-03",
       "requestEnd": "2026-11-03",
-      "status": "no respondido"
+      "status": "no respondido",
+      "DateReply": null
+    },
+    {
+      "id": "8e85vUUUSpQ",
+      "subject": "",
+      "description": "prueba",
+      "program": "",
+      "module": "",
+      "date": "2026-11-03",
+      "requestStart": "2026-11-03",
+      "requestEnd": "2026-11-03",
+      "status": "no respondido",
+      "DateReply": null
+    },
+    {
+      "id": "mGHrieOmIlQ",
+      "subject": "prueba2",
+      "description": "prueba2",
+      "program": "",
+      "module": "",
+      "date": "2026-11-03",
+      "requestStart": "2026-11-03",
+      "requestEnd": "2026-11-03",
+      "status": "no respondido",
+      "DateReply": null
+    },
+    {
+      "id": "vBRA8YO4oZY",
+      "subject": "",
+      "description": "prueba3\n",
+      "program": "",
+      "module": "",
+      "date": "2026-11-03",
+      "requestStart": "2026-11-03",
+      "requestEnd": "2026-11-03",
+      "status": "no respondido",
+      "DateReply": null
+    },
+    {
+      "id": "EItlmRlcTsg",
+      "subject": "",
+      "description": "cc",
+      "program": "",
+      "module": "",
+      "date": "2026-11-03",
+      "requestStart": "2026-11-03",
+      "requestEnd": "2026-11-03",
+      "status": "no respondido",
+      "DateReply": null
+    },
+    {
+      "id": "RaEkRzpGIek",
+      "subject": "",
+      "description": "",
+      "program": "",
+      "module": "",
+      "date": "2026-11-03",
+      "requestStart": "2026-11-03",
+      "requestEnd": "2026-11-03",
+      "status": "no respondido",
+      "DateReply": null
     }
   ],
   "requestsReceived": [
@@ -176,7 +251,8 @@
       "date": "12 feb",
       "requestStart": "2026-02-12",
       "requestEnd": "2026-04-12",
-      "status": "respondido"
+      "status": "respondido",
+      "DateReply": "2026-02-15"
     },
     {
       "id": "8",
@@ -187,7 +263,8 @@
       "date": "04/05/24",
       "requestStart": "2024-05-04",
       "requestEnd": "2024-07-04",
-      "status": "respondido"
+      "status": "respondido",
+      "DateReply": "2024-05-08"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
