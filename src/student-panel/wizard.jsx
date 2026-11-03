@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Upload } from "lucide-react";
-import { useRequests } from "./contexts/RequestContext";
+import { useRequests } from "../contexts/RequestContext";
+// import "../styles.css";
+import styles from "./StudentPanel.module.css";
 function RequestModal({ open, onClose }) {
   const [type, setType] = useState("otro");
   const now = new Date();
@@ -36,13 +38,13 @@ function RequestModal({ open, onClose }) {
 
   // console.log(`program: ${program} *********** description: ${description}`);
   return (
-    <div className="modal-backdrop">
-      <form className="modal" onSubmit={handleSubmit}>
-        <div className="modal-titlebar">
+    <div className={styles["modal-backdrop"]}>
+      <form className={styles["modal"]} onSubmit={handleSubmit}>
+        <div className={styles["modal-titlebar"]}>
           <h2>Formulario de Solicitud del Estudiante</h2>
         </div>
-        <div className="modal-content">
-          <div className="form-left">
+        <div className={styles["modal-content"]}>
+          <div className={styles["form-left"]}>
             <label>
               Correo
               <input value="diegosolano@upb.edu" readOnly />
@@ -70,14 +72,14 @@ function RequestModal({ open, onClose }) {
             {type === "licencia" && (
               <label>
                 Documentación de respaldo
-                <div className="upload-box">
+                <div className={styles["upload-box"]}>
                   <Upload size={24} />
                   <input type="file" accept=".jpg,.jpeg,.pdf" />
                 </div>
               </label>
             )}
           </div>
-          <div className="form-right">
+          <div className={styles["form-right"]}>
             {type !== "baja" && (
               <label>
                 Asunto
@@ -101,7 +103,7 @@ function RequestModal({ open, onClose }) {
             {type === "licencia" && (
               <label>
                 Periodo de la licencia
-                <div className="date-row">
+                <div className={styles["date-row"]}>
                   <div>
                     <span>Fecha de inicio</span>
                     <input
@@ -127,7 +129,7 @@ function RequestModal({ open, onClose }) {
             )}
           </div>
         </div>
-        <div className="modal-actions">
+        <div className={styles["modal-actions"]}>
           <button type="button" onClick={onClose}>
             Cancelar
           </button>

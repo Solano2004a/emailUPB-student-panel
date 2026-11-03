@@ -33,7 +33,11 @@ textarea {
   display: flex;
   min-height: 100vh;
 }
-.sidebar {
+
+/*********************************
+/** STUDENT PANEL
+/******************************/
+/* .sidebar {
   position: fixed;
   top: 0;
   left: 0;
@@ -46,11 +50,9 @@ textarea {
   padding: 8px;
   display: flex;
   flex-direction: column;
-  /* gap: 14px; */
 }
 
 .top {
-  /* top: 20px; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -59,7 +61,6 @@ textarea {
 }
 .brand {
   height: 31px;
-  /* background: #fafafa; */
   color: #cac9c9;
   display: flex;
   align-items: end;
@@ -72,8 +73,7 @@ textarea {
   font-weight: 500;
   font-size: 18px;
 }
-/* .brand-bold {
-} */
+
 .brand-mark {
   width: 22px;
   height: 22px;
@@ -126,7 +126,6 @@ textarea {
   border-radius: 4px;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   gap: 8px;
   padding: 0 7px;
   font-size: 16px;
@@ -265,279 +264,10 @@ textarea {
   background: #dfb62d;
   left: 8px;
   bottom: -4px;
-}
-
-/********************************
-/** REQUESTS RECEIVED
-/********************************/
-.h2-received {
-  color: #5a5959;
-  padding: 18px 0;
-  padding-left: 36px;
-  margin: 0 0 0 0;
-  font-size: 20px;
-  font-weight: 500;
-  background: #fff;
-}
-.emailupb-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 40px;
-  padding: 0 7.5% 0 36px;
-  border-top: 1px solid #d9d9dc;
-  border-bottom: 1px solid #d9d9dc;
-  background: #fff;
-}
-.emailupb-toolbar-left,
-.emailupb-toolbar-right {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-}
-.emailupb-toolbar-right {
-  gap: 10px;
-  color: #858585;
-  font-size: 13px;
-}
-.emailupb-filter {
-  font-size: 11px;
-  color: #888692;
-}
-.select-wrap {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  min-width: 178px;
-}
-
-.select-wrap select {
-  appearance: none;
-  border: 1px solid #e5e4eb;
-  background: #fff;
-  border-radius: 8px;
-  padding: 10px 33px 10px 12px;
-  width: 100%;
-  outline: none;
-  color: #514f5a;
-  font-size: 12px;
-  cursor: pointer;
-}
-.select-wrap > svg {
-  position: absolute;
-  right: 11px;
-  color: #85838e;
-  pointer-events: none;
-}
-.select-wrap select:focus,
-.field:focus {
-  border-color: #8b81c1;
-  box-shadow: 0 0 0 3px #7769bb16;
-}
-
-.emailupb-toolbar input[type="checkbox"],
-.emailupb-table input[type="checkbox"] {
-  width: 12px;
-  height: 12px;
-  margin: 0;
-  accent-color: #111;
-  cursor: pointer;
-}
-.emailupb-icon-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3px;
-  border: 0;
-  background: transparent;
-  color: #8a8a8a;
-  cursor: pointer;
-}
-.emailupb-icon-button:hover {
-  color: #111;
-}
-/* .emailupb-toolbar select {
-  width: 38px;
-  border: 0;
-  appearance: auto;
-  outline: none;
-  color: transparent;
-  background: #fff;
-  cursor: pointer;
-  font-size: 10px;
 } */
-/* .emailupb-toolbar select:focus {
-  color: #555;
-  width: 100px;
-} */
-.emailupb-delete {
-  margin-left: 12px;
-}
-.emailupb-table-wrap {
-  width: 100%;
-  overflow: auto;
-  background: #fff;
-}
-.emailupb-table {
-  width: 100%;
-  min-width: 600px;
-  border-collapse: collapse;
-  table-layout: fixed;
-  background: #fff;
-  font-size: 9px;
-}
-.emailupb-table .check-col {
-  width: 8.2%;
-}
-.emailupb-table .subject-col {
-  width: 19%;
-}
-.emailupb-table .description-col {
-  width: 58%;
-}
-.emailupb-table .date-col {
-  width: 14.8%;
-}
-.emailupb-table thead {
-  height: 38px;
-}
-.emailupb-table th {
-  height: 38px;
-  padding: 0 8px;
-  border-bottom: 1px solid #ddd;
-  color: #171717;
-  font-size: 9px;
-  font-weight: 600;
-  text-align: left;
-  white-space: nowrap;
-}
-.emailupb-table th:first-child,
-.emailupb-table td:first-child {
-  padding-left: 15px;
-}
-.emailupb-table tbody tr {
-  height: 38px;
-  border-bottom: 1px solid #dedede;
-}
-.emailupb-table tbody tr:hover {
-  background: #f8f8fa;
-}
-.emailupb-table td {
-  padding: 0 8px;
-  color: #8b8b8b;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.emailupb-table .emailupb-subject {
-  font-weight: 400;
-  font-size: 12px;
-}
-.emailupb-table tr.unread .emailupb-subject {
-  color: #777;
-  font-weight: 500;
-}
-.emailupb-table .emailupb-description {
-  font-size: 12px;
-}
-.emailupb-table .emailupb-date {
-  padding-left: 10px;
-  font-size: 13px;
-}
-.emailupb-empty {
-  height: 70px;
-  text-align: center;
-  color: #888 !important;
-}
-/********************************
-/** END - REQUESTS RECEIVED
-/********************************/
-
-/********************************
-/** REQUESTS SENT
-/********************************/
-
-/* Contenedor de la tabla */
-.requests-sent {
-  width: 100%;
-  min-width: 0;
-  overflow-x: auto;
-  background-color: #ffffff;
-  box-sizing: border-box;
-}
-.requests-sent h2 {
-  padding-left: 36px;
-  font-size: 20px;
-  font-weight: 500;
-  color: #5a5959;
-}
-
-/* Tabla principal */
-.requests-table {
-  width: 100%;
-  min-width: 600px;
-  border-collapse: collapse;
-  table-layout: fixed;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #ffffff;
-}
-
-/* Filas */
-.requests-table .request-row {
-  height: 34px;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #dedede;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  /* margin-left: 36px; */
-}
-
-/* Efecto al pasar el cursor */
-.requests-table .request-row:hover {
-  background-color: #f7f7fa;
-}
-
-/* Celdas */
-.requests-table td {
-  padding: 0 12px;
-  font-size: 9px;
-  font-weight: 400;
-  color: #929292;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: left;
-  vertical-align: middle;
-  box-sizing: border-box;
-}
-
-/* Columna del asunto */
-.requests-table .request-subject {
-  width: 200px;
-  /* margin-left: 5.2%; */
-  text-align: left;
-  font-size: 13px;
-}
-
-/* Columna de la descripción */
-.requests-table .request-description {
-  width: 250px;
-  font-size: 13px;
-  /* padding-left: 40%; */
-}
-
-/* Columna de la fecha */
-.requests-table .request-date {
-  width: 100px;
-  margin-right: 10.5%;
-  text-align: right;
-  font-size: 13px;
-}
-
-/********************************
-/** END -REQUESTS SENT STYLING
-/********************************/
+/************************************
+/** END - STUDENT - PANEL
+/**********************************/
 
 .inbox {
   background: white;
@@ -582,7 +312,11 @@ textarea {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.modal-backdrop {
+
+/**************************
+/** WIZARD
+/*******************************/
+/* .modal-backdrop {
   position: fixed;
   inset: 0;
   background: #0004;
@@ -675,7 +409,11 @@ textarea {
 .modal-actions button:last-child {
   background: #404040;
   color: #e8e8e8;
-}
+} */
+
+/*************************************
+/** END WIZARD
+/*************************************/
 .detail-page,
 .password-page {
   background: #fff;
@@ -1112,7 +850,7 @@ input {
 /********************************
 /** Start and End permissions
 /********************************/
-.date-row {
+/* .date-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
@@ -1134,7 +872,7 @@ input {
   font-size: 11px;
   color: #514f5a;
   background: #fff;
-}
+} */
 /* ================================
    DISEÑO RESPONSIVE
    ================================ */

@@ -1,27 +1,9 @@
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import { RecoverView, LoginView } from "./login/Login";
-import StudentPanel from "./StudentPanel";
+import StudentPanel from "./student-panel/StudentPanel";
 
-import { RequestsSent } from "./RequestsSent";
-import emailUPBlogo from "./assets/emailUPBlogo.png";
-import {
-  Grid2X2,
-  KeyRound,
-  LogOut,
-  Mail,
-  Send,
-  Trash2,
-  RotateCcw,
-  ChevronDown,
-  Upload,
-  PencilLine,
-} from "lucide-react";
-import RequestDetail from "./RequestDetail";
-import PasswordChange from "./login/PasswordChange";
 import "./styles.css";
-import { RequestModal } from "./wizard";
-import Received from "./RequestsReceived";
 import {
   BrowserRouter,
   Routes,

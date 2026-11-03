@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { Icon, RotateCwIcon, Trash2, ChevronDown } from "lucide-react";
-import { useRequests } from "./contexts/RequestContext";
+import { useRequests } from "../contexts/RequestContext";
+import styles from "./StudentPanel.module.css";
 
 function Received({ setReceived, onOpen }) {
   const { received, deleteReceived } = useRequests();
@@ -86,9 +87,9 @@ function Received({ setReceived, onOpen }) {
 
   return (
     <>
-      <h2 className="h2-received">Recibidos</h2>
-      <div className="emailupb-toolbar">
-        <div className="emailupb-toolbar-left">
+      <h2 className={styles["h2-received"]}>Recibidos</h2>
+      <div className={styles["emailupb-toolbar"]}>
+        <div className={styles["emailupb-toolbar-left"]}>
           <input
             aria-label="Seleccionar todas las solicitudes"
             type="checkbox"
@@ -96,7 +97,7 @@ function Received({ setReceived, onOpen }) {
             onChange={toggleAll}
           />
           <button
-            className="emailupb-icon-button"
+            className={styles["emailupb-icon-button"]}
             aria-label="Actualizar bandeja"
             title="Actualizar"
             onClick={refresh}
@@ -104,9 +105,9 @@ function Received({ setReceived, onOpen }) {
             <RotateCwIcon name="refresh" size={16} />
           </button>
         </div>
-        <div className="emailupb-toolbar-right">
-          <label className="emailupb-filter">Filtrar por</label>
-          <div className="select-wrap">
+        <div className={styles["emailupb-toolbar-right"]}>
+          <label className={styles["emailupb-filter"]}>Filtrar por</label>
+          <div className={styles["select-wrap"]}>
             <select value={filter} onChange={(e) => setFilter(e.target.value)}>
               <option>Todas</option>
               <option>No leídas</option>
@@ -115,7 +116,7 @@ function Received({ setReceived, onOpen }) {
             <ChevronDown size={15} />
           </div>
           <button
-            className="emailupb-icon-button emailupb-delete"
+            className={`${styles["emailupb-icon-button"]} ${styles["emailupb-delete"]}`}
             aria-label="Eliminar seleccionadas"
             title="Eliminar seleccionadas"
             onClick={deleteSelected}
@@ -124,13 +125,13 @@ function Received({ setReceived, onOpen }) {
           </button>
         </div>
       </div>
-      <div className="emailupb-table-wrap">
-        <table className="emailupb-table">
+      <div className={styles["emailupb-table-wrap"]}>
+        <table className={styles["emailupb-table"]}>
           <colgroup>
-            <col className="check-col" />
-            <col className="subject-col" />
-            <col className="description-col" />
-            <col className="date-col" />
+            <col className={styles["check-col"]} />
+            <col className={styles["subject-col"]} />
+            <col className={styles["description-col"]} />
+            <col className={styles["date-col"]} />
           </colgroup>
           {/* <thead>
             <tr>
@@ -144,7 +145,7 @@ function Received({ setReceived, onOpen }) {
             {visibleRequests.map((request) => (
               <tr
                 key={request.id}
-                className={request.read ? "" : "unread"}
+                className={request.read ? "" : styles["unread"]}
                 onClick={() => onOpen(request.id)}
               >
                 <td>
@@ -158,14 +159,18 @@ function Received({ setReceived, onOpen }) {
                   />
                 </td>
 
-                <td className="emailupb-subject">{request.subject}</td>
-                <td className="emailupb-description">{request.description}</td>
-                <td className="emailupb-date">{request.date}</td>
+                <td className={styles["emailupb-subject"]}>
+                  {request.subject}
+                </td>
+                <td className={styles["emailupb-description"]}>
+                  {request.description}
+                </td>
+                <td className={styles["emailupb-date"]}>{request.date}</td>
               </tr>
             ))}
             {!visibleRequests.length && (
               <tr>
-                <td colSpan="4" className="emailupb-empty">
+                <td colSpan="4" className={styles["emailupb-empty"]}>
                   No hay solicitudes para mostrar.
                 </td>
               </tr>
