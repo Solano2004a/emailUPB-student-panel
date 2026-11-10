@@ -64,15 +64,20 @@ function EyeIcon({ open }) {
   );
 }
 
-function LoginView({ onForgot, onLogin }) {
-  const [codigo, setCodigo] = useState("");
-  const [password, setPassword] = useState("");
+function LoginView({
+  onForgot,
+  onLogin,
+  setCode,
+  code,
+  password,
+  setPassword,
+}) {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Lógica de autenticación aquí
-    console.log({ codigo, password });
+    console.log({ code, password });
   };
 
   return (
@@ -87,8 +92,8 @@ function LoginView({ onForgot, onLogin }) {
           type="text"
           className="field"
           placeholder="Código de acceso"
-          value={codigo}
-          onChange={(e) => setCodigo(e.target.value)}
+          value={code}
+          onChange={(e) => setCode(e.target.value)}
         />
 
         <div className="password-row">
@@ -111,7 +116,7 @@ function LoginView({ onForgot, onLogin }) {
           </button>
         </div>
 
-        <button type="submit" className="btn-primary" onClick={onLogin}>
+        <button type="submit" className="btn-primary">
           Acceder
         </button>
 

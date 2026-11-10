@@ -67,7 +67,7 @@ function Sidebar({ onRequest, onReceived, onRequests, onPassword, onLogout }) {
 }
 //UseCOntext step 1: Create a context
 // const PostContext = createContext();
-function StudentPanel({ isAuthenticated, setIsAuthenticated }) {
+function StudentPanel({ setCode }) {
   const [modal, setModal] = useState(false);
   // const [requests, setRequests] = useState(initialRequests);
   const [previousSection, setPreviousSection] = useState("");
@@ -92,7 +92,7 @@ function StudentPanel({ isAuthenticated, setIsAuthenticated }) {
         onRequests={() => setSection("requestsSent")}
         onPassword={() => setSection("password")}
         onLogout={() => {
-          (setIsAuthenticated(false), setSection(""), navigate("/login"));
+          (setCode(""), setSection(""), navigate("/login"));
         }}
       />
 

@@ -13,6 +13,7 @@ import {
   replace,
 } from "react-router-dom";
 import { RequestProvider } from "./contexts/RequestContext";
+import AdminPanel from "./admin-panel/AdminPanel";
 
 function Calendar({ value, onChange }) {
   return (
@@ -60,25 +61,32 @@ function Calendar({ value, onChange }) {
 }
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [code, setCode] = useState("");
+  const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
+  function renderLogin() {
+    if (code === "student") {
+      return <Navigate to="/student-panel" />;
+    } else if (code === "admin") {
+      return <Navigate to="/admin-panel" />;
+    } else {
+      return (
+        <LoginView
+          onForgot={() => navigate("/recover", { replace: true })}
+          setCode={setCode}
+          code={code}
+          password={password}
+          setPassword={setPassword}
+        />
+      );
+    }
+  }
 
   return (
     <RequestProvider>
       <Routes>
-        <Route
-          path="/login"
-          element={
-            isAuthenticated ? (
-              <Navigate to="/student-panel" />
-            ) : (
-              <LoginView
-                onForgot={() => navigate("/recover", { replace: true })}
-                onLogin={() => setIsAuthenticated(true)}
-              />
-            )
-          }
-        />
+        <Route path="/login" element={renderLogin()} />
 
         <Route
           path="/recover"
@@ -89,11 +97,18 @@ function App() {
         <Route
           path="/student-panel"
           element={
-            isAuthenticated ? (
-              <StudentPanel
-                isAuthenticated={isAuthenticated}
-                setIsAuthenticated={setIsAuthenticated}
-              />
+            code === "student" ? (
+              <StudentPanel setCode={setCode} />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          }
+        />
+        <Route
+          path="/admin-panel"
+          element={
+            code === "admin" ? (
+              <AdminPanel setCode={setCode} />
             ) : (
               <Navigate to="/login" replace />
             )
