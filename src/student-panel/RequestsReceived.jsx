@@ -9,6 +9,7 @@ function Received({ setReceived, onOpen }) {
   const [filter, setFilter] = useState("Todas");
   const [notice, setNotice] = useState("");
   const [refreshKey, setRefreshKey] = useState(0);
+  // console.log(received);
 
   // const sectionRequests = useMemo(
   //   () => received.filter((r) => r.section === activeSection),

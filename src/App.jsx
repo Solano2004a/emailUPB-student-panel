@@ -86,7 +86,14 @@ function App() {
   return (
     <RequestProvider>
       <Routes>
-        <Route path="/login" element={renderLogin()} />
+        <Route
+          path="/login"
+          element={
+            // renderLogin()
+            <AdminPanel />
+            // <StudentPanel />
+          }
+        />
 
         <Route
           path="/recover"

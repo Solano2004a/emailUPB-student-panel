@@ -11,6 +11,7 @@ const RequestsContext = createContext();
 function RequestProvider({ children }) {
   const [requests, setRequests] = useState([]);
   const [received, setReceived] = useState([]);
+  const [students, setStudents] = useState([]);
   //this one is for getting a request to show in request details
   const [currentRequest, setCurrentRequest] = useState({});
 
@@ -22,9 +23,13 @@ function RequestProvider({ children }) {
 
         const receivedRes = await fetch(`${BASE_URL}/requestsReceived`);
         const receivedData = await receivedRes.json();
-        // console.log(data);
+
+        const studentsRes = await fetch(`${BASE_URL}/students`);
+        const studentsData = await studentsRes.json();
+        console.log(studentsData);
         setRequests(sentData.reverse());
         setReceived(receivedData);
+        setStudents(studentsData);
         // console.log(received);
       } catch {
         alert("Hubo un error al intentar obtener las solicitudes");
@@ -44,6 +49,16 @@ function RequestProvider({ children }) {
       return data;
     } catch {
       alert("sHubo un error al intentar obtener los detalles de la solicitud");
+    }
+  }, []);
+  const getStudentById = useCallback(async function getStudentById(id) {
+    try {
+      const res = await fetch(`${BASE_URL}/students/${id}`);
+      const data = await res.json();
+      // console.log(data);
+      return data;
+    } catch {
+      alert("sHubo un error al intentar obtener los detalles del estudiante");
     }
   }, []);
 
@@ -83,6 +98,7 @@ function RequestProvider({ children }) {
       alert("Hubo un error al intentar crear la solicitud");
     }
   }
+
   return (
     <RequestsContext.Provider
       value={{
@@ -91,6 +107,8 @@ function RequestProvider({ children }) {
         deleteReceived,
         createRequest,
         getRequestById,
+        students,
+        getStudentById,
       }}
     >
       {children}

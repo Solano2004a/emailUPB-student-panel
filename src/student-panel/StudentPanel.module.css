@@ -501,7 +501,8 @@
   gap: 8px;
   padding: 0 7px;
   font-size: 16px;
-  color: #474646;
+  color: #5a5959;
+  background-color: #ffffff;
   font-weight: 500;
   cursor: pointer;
 }

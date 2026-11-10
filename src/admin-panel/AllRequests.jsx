@@ -3,25 +3,31 @@ import { Icon, Avatar } from "./ui.jsx";
 import Report from "./Report.jsx";
 import style from "./AdminPanel.module.css";
 
-function Row({ r, onOpen }) {
+function Row({
+  r,
+  //  s,
+  onOpen,
+}) {
+  // console.log("student", s);
   return (
-    <div className={style["tr r3"]} onClick={() => onOpen(r)}>
+    <div
+      className={`${style["tr"]} ${style["r3"]}`}
+      onClick={() => onOpen(r.id)}
+    >
       <span className={style["who"]}>
         <Avatar name={r.student} />
         {r.student}
       </span>
-      <span className={style["ellipsis"]}>
-        {r.type} - {r.desc}
-      </span>
+      <span className={style["ellipsis"]}>{r.subject}</span>
       <span className={style["date"]}>{r.date}</span>
     </div>
   );
 }
 
-export default function AllRequests({ requests, programs, onOpen }) {
+export default function AllRequests({ requests, programs, students, onOpen }) {
   const [open, setOpen] = useState({});
   const [report, setReport] = useState(false);
-
+  // console.log(students);
   const pending = useMemo(
     () => requests.filter((r) => r.status === "pending"),
     [requests],
@@ -29,7 +35,15 @@ export default function AllRequests({ requests, programs, onOpen }) {
   const grouped = useMemo(() => {
     const g = {};
     requests.forEach((r) => {
-      ((g[r.program] ??= {})[r.module] ??= []).push(r);
+      if (!g[r.program]) {
+        g[r.program] = {};
+      }
+
+      if (!g[r.program][r.module]) {
+        g[r.program][r.module] = [];
+      }
+
+      g[r.program][r.module].push(r);
     });
     return Object.entries(g).map(([program, mods]) => ({
       program,
@@ -53,9 +67,18 @@ export default function AllRequests({ requests, programs, onOpen }) {
 
       <h3 className={style["group-title"]}>Pendientes</h3>
       <div className={style["card"]}>
-        {pending.map((r) => (
-          <Row key={r.id} r={r} onOpen={onOpen} />
-        ))}
+        {pending.map((r) => {
+          // const student = students.find((s) => r.studentId === s.id);
+          // console.log(student);
+          // if (!student) return;
+          <Row
+            // key={`${r.id}-${student.id}`}
+            key={r.id}
+            r={r}
+            // s={student}
+            onOpen={onOpen}
+          />;
+        })}
         {!pending.length && (
           <div className={style["empty"]}>No hay solicitudes pendientes.</div>
         )}

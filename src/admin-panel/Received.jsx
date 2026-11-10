@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import { Icon, Avatar } from "./ui.jsx";
 import style from "./AdminPanel.module.css";
 
-export default function Received({ requests, setRequests, onOpen }) {
+export default function Received({ requests, setRequests, students, onOpen }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("all");
   const [selected, setSelected] = useState([]);
@@ -119,7 +119,7 @@ export default function Received({ requests, setRequests, onOpen }) {
           <div
             key={r.id}
             className={`${style["tr"]} ${style["r4"]}`}
-            onClick={() => onOpen(r)}
+            onClick={() => onOpen(r.id)}
           >
             <input
               type="checkbox"

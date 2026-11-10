@@ -7,12 +7,15 @@ import CreatedPrograms from "./CreatedPrograms.jsx";
 import RequestDetails from "./RequestDetails.jsx";
 import { initialRequests, initialPrograms } from "./data.js";
 import style from "./AdminPanel.module.css";
+import RequestDetail from "../RequestDetail.jsx";
 
 export default function AdminPanel({ setCode }) {
   const [section, setSection] = useState("received");
   const [requests, setRequests] = useState(initialRequests);
   const [programs, setPrograms] = useState(initialPrograms);
   const [detail, setDetail] = useState(null);
+  const [selectedRequestId, setSelectedRequestId] = useState(null);
+  const [previousSection, setPreviousSection] = useState("");
 
   const markAnswered = (id) => {
     setRequests((rs) =>
@@ -55,7 +58,11 @@ export default function AdminPanel({ setCode }) {
             <Received
               requests={requests}
               setRequests={setRequests}
-              onOpen={setDetail}
+              onOpen={(id) => {
+                setSection("detail");
+                setPreviousSection("received");
+                setSelectedRequestId(id);
+              }}
             />
           )}
 
@@ -63,7 +70,18 @@ export default function AdminPanel({ setCode }) {
             <AllRequests
               requests={requests}
               programs={programs}
-              onOpen={setDetail}
+              // onOpen={setDetail}
+              onOpen={(id) => {
+                setSection("detail");
+                setSelectedRequestId(id);
+                setPreviousSection("all");
+              }}
+            />
+          )}
+          {section === "detail" && (
+            <RequestDetail
+              selectedRequestId={selectedRequestId}
+              onBack={() => setSection(previousSection)}
             />
           )}
 

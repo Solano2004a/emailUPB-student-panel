@@ -2,6 +2,7 @@
   "RequestsSent": [
     {
       "id": "2",
+      "studentId": "101",
       "subject": "Consulta sobre los requisitos de inscripción",
       "description": "Quisiera conocer los documentos necesarios para completar mi inscripción.",
       "program": "Diplomado en análisis de datos",
@@ -14,6 +15,7 @@
     },
     {
       "id": "3",
+      "studentId": "102",
       "subject": "Solicitud de ampliación de plazo",
       "description": "Solicito una ampliación del plazo para completar las actividades del módulo.",
       "program": "Diplomado en seguridad informática",
@@ -26,6 +28,7 @@
     },
     {
       "id": "4",
+      "studentId": "103",
       "subject": "Consulta sobre el contenido del módulo",
       "description": "Solicito información adicional sobre los temas que se desarrollarán durante el módulo.",
       "program": "Diplomado en análisis de datos",
@@ -38,6 +41,7 @@
     },
     {
       "id": "5",
+      "studentId": "104",
       "subject": "Solicitud de cambio de módulo",
       "description": "Quisiera consultar la posibilidad de cambiar de módulo debido a motivos académicos.",
       "program": "Diplomado en seguridad informática",
@@ -50,6 +54,7 @@
     },
     {
       "id": "6",
+      "studentId": "105",
       "subject": "Consulta sobre las evaluaciones",
       "description": "Solicito información sobre las fechas y modalidades de las evaluaciones del módulo.",
       "program": "Diplomado en análisis de datos",
@@ -62,6 +67,7 @@
     },
     {
       "id": "7",
+      "studentId": "106",
       "subject": "Solicitud de acceso a materiales",
       "description": "Solicito acceso a los materiales de estudio y recursos complementarios del módulo.",
       "program": "Diplomado en seguridad informática",
@@ -74,6 +80,7 @@
     },
     {
       "id": "8",
+      "studentId": "107",
       "subject": "Consulta sobre la certificación",
       "description": "Quisiera conocer los requisitos académicos necesarios para obtener el certificado del programa.",
       "program": "Diplomado en análisis de datos",
@@ -86,6 +93,7 @@
     },
     {
       "id": "9",
+      "studentId": "108",
       "subject": "Solicitud de revisión de calificaciones",
       "description": "Solicito una revisión de las calificaciones registradas en el módulo.",
       "program": "Diplomado en seguridad informática",
@@ -98,6 +106,7 @@
     },
     {
       "id": "l4PnNA-nBro",
+      "studentId": "109",
       "subject": "",
       "description": "ddddddddddd",
       "program": "",
@@ -110,6 +119,7 @@
     },
     {
       "id": "tSb7oXsKDIY",
+      "studentId": "110",
       "subject": "",
       "description": "",
       "program": "",
@@ -122,6 +132,7 @@
     },
     {
       "id": "QyD_uj_OM74",
+      "studentId": "101",
       "subject": "",
       "description": "",
       "program": "",
@@ -134,6 +145,7 @@
     },
     {
       "id": "jMm_8THiq_0",
+      "studentId": "102",
       "subject": "",
       "description": "",
       "program": "",
@@ -146,6 +158,7 @@
     },
     {
       "id": "JGVykpDsMw4",
+      "studentId": "103",
       "subject": "",
       "description": "",
       "program": "",
@@ -158,6 +171,7 @@
     },
     {
       "id": "HPOW_p0aUHw",
+      "studentId": "104",
       "subject": "fff",
       "description": "",
       "program": "",
@@ -170,6 +184,7 @@
     },
     {
       "id": "jRKW9YQf_pQ",
+      "studentId": "105",
       "subject": "",
       "description": "",
       "program": "",
@@ -182,6 +197,7 @@
     },
     {
       "id": "8e85vUUUSpQ",
+      "studentId": "106",
       "subject": "",
       "description": "prueba",
       "program": "",
@@ -194,6 +210,7 @@
     },
     {
       "id": "mGHrieOmIlQ",
+      "studentId": "107",
       "subject": "prueba2",
       "description": "prueba2",
       "program": "",
@@ -206,6 +223,7 @@
     },
     {
       "id": "vBRA8YO4oZY",
+      "studentId": "108",
       "subject": "",
       "description": "prueba3\n",
       "program": "",
@@ -218,6 +236,7 @@
     },
     {
       "id": "EItlmRlcTsg",
+      "studentId": "109",
       "subject": "",
       "description": "cc",
       "program": "",
@@ -230,6 +249,7 @@
     },
     {
       "id": "RaEkRzpGIek",
+      "studentId": "110",
       "subject": "",
       "description": "",
       "program": "",
@@ -242,6 +262,7 @@
     },
     {
       "id": "QKDiTRCkEkc",
+      "studentId": "101",
       "subject": "",
       "description": "",
       "program": "",
@@ -256,6 +277,7 @@
   "requestsReceived": [
     {
       "id": "6",
+      "studentId": "105",
       "subject": "Consulta sobre las evaluaciones",
       "description": "Solicito información sobre las fechas y modalidades de las evaluaciones del módulo.",
       "program": "Diplomado en análisis de datos",
@@ -268,6 +290,7 @@
     },
     {
       "id": "8",
+      "studentId": "107",
       "subject": "Consulta sobre la certificación",
       "description": "Quisiera conocer los requisitos académicos necesarios para obtener el certificado del programa.",
       "program": "Diplomado en análisis de datos",
@@ -277,6 +300,88 @@
       "requestEnd": "2024-07-04",
       "status": "respondido",
       "DateReply": "2024-05-08"
+    }
+  ],
+  "students": [
+    {
+      "id": 101,
+      "name": "Carlos Mendoza",
+      "email": "cmendoza@upb.edu",
+      "studentCode": "202200101",
+      "password": "Carlos2026!",
+      "career": "Ingeniería Informática"
+    },
+    {
+      "id": "102",
+      "name": "María Fernanda López",
+      "email": "mflopez@upb.edu",
+      "studentCode": "202200102",
+      "password": "Maria2026!",
+      "career": "Ingeniería Industrial"
+    },
+    {
+      "id": "103",
+      "name": "Andrés Vargas",
+      "email": "avargas@upb.edu",
+      "studentCode": "202200103",
+      "password": "Andres2026!",
+      "career": "Ingeniería Civil"
+    },
+    {
+      "id": "104",
+      "name": "Lucía Fernández",
+      "email": "lfernandez@upb.edu",
+      "studentCode": "202300104",
+      "password": "Lucia2026!",
+      "career": "Ingeniería Comercial"
+    },
+    {
+      "id": "105",
+      "name": "Diego Solano",
+      "email": "dsolano@upb.edu",
+      "studentCode": "202200105",
+      "password": "Diego2026!",
+      "career": "Ingeniería Informática"
+    },
+    {
+      "id": 106,
+      "name": "Valentina Rojas",
+      "email": "vrojas@upb.edu",
+      "studentCode": "202300106",
+      "password": "Valentina2026!",
+      "career": "Ingeniería Financiera"
+    },
+    {
+      "id": "107",
+      "name": "Gabriel Herrera",
+      "email": "gherrera@upb.edu",
+      "studentCode": "202100107",
+      "password": "Gabriel2026!",
+      "career": "Ingeniería Electromecánica"
+    },
+    {
+      "id": "108",
+      "name": "Camila Torres",
+      "email": "ctorres@upb.edu",
+      "studentCode": "202200108",
+      "password": "Camila2026!",
+      "career": "Ingeniería de Sistemas"
+    },
+    {
+      "id": "109",
+      "name": "Sebastián Castillo",
+      "email": "scastillo@upb.edu",
+      "studentCode": "202300109",
+      "password": "Sebastian2026!",
+      "career": "Ingeniería Industrial"
+    },
+    {
+      "id": "110",
+      "name": "Daniela Morales",
+      "email": "dmorales@upb.edu",
+      "studentCode": "202100110",
+      "password": "Daniela2026!",
+      "career": "Ingeniería Comercial"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
